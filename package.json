@@ -5,7 +5,7 @@
   "publisher": "HardHacker",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hardhackerlabs/theme-vscode.git"
+    "url": "https://github.com/hardhackerlabs/theme-vscode.git"
   },
   "version": "0.1.4",
   "engines": {
