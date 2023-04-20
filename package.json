@@ -1,0 +1,54 @@
+{
+  "name": "hard-hacker-theme",
+  "displayName": "HardHackerTheme",
+  "description": "",
+  "publisher": "HardHacker",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hardhackerlabs/theme-vscode.git"
+  },
+  "version": "0.1.4",
+  "engines": {
+    "vscode": "^1.13.0"
+  },
+  "scripts": {
+    "start": "nodemon --watch src src/index.js",
+    "build": "node src/index.js",
+    "package": "vsce package -o ./hardhacker-theme.vsix",
+    "vscode:prepublish": "npm run build",
+		"vsce-publish": "vsce publish"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+		"hardhacker",
+		"dark",
+		"theme",
+		"color-theme"
+	],
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#282433",
+		"theme": "dark"
+	},
+  "contributes": {
+    "themes": [
+      {
+        "label": "Hard Hacker",
+        "uiTheme": "vs-dark",
+        "path": "./themes/normal.json"
+      },
+      {
+        "label": "Hard Hacker Darker",
+        "uiTheme": "vs-dark",
+        "path": "./themes/darker.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.22",
+    "tinycolor2": "^1.6.0"
+  }
+}
