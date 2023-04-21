@@ -64,6 +64,7 @@ function getTheme(name, colorConfig, controlsOpt) {
 
       "statusBar.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "statusBar.foreground": colors.text,
+      "statusBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
       "statusBar.debuggingBackground": colors.yellow,
       "statusBar.debuggingForeground": colors.black,
       "statusBar.noFolderBackground": colors.black,

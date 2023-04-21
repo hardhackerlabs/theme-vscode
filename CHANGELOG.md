@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.6]
+
+- Add the missing border for status bar
+
 ## [0.1.5]
 
 - A new high contrast theme
