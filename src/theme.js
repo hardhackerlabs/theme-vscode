@@ -1,4 +1,8 @@
-function getTheme(name, colorConfig) {
+function getTheme(name, colorConfig, controlsOpt) {
+  const controls = Object.assign({
+    highContrast: false,
+  }, controlsOpt || {});
+
   const { originColors, colors } = colorConfig;
 
   return {
@@ -12,6 +16,7 @@ function getTheme(name, colorConfig) {
       "titleBar.activeForeground": colors.text,
       "titleBar.inactiveBackground": colors.background,
       "titleBar.inactiveForeground": colors.text,
+      "titleBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
 
       "editor.background": colors.background,
       "editor.foreground": colors.text,
@@ -24,11 +29,14 @@ function getTheme(name, colorConfig) {
       "activityBar.foreground": colors.themePrimary,
       "activityBar.activeBorder": colors.themePrimary,
       "activityBar.inactiveForeground": colors.secondaryText,
+      "activityBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
 
       "sideBarTitle.foreground": colors.text,
-      "sideBar.background": colors.background,
+      "sideBar.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "sideBar.foreground": colors.text,
-      "sideBarSectionHeader.background": colors.transparent,
+      "sideBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
+      "sideBarSectionHeader.background": controls.highContrast ? colors.black : colors.transparent,
+      "sideBarSectionHeader.border": controls.highContrast? colors.highlightBackground : colors.transparent,
       // "list.activeSelectionForeground": colors.themePrimary,
       "list.activeSelectionBackground": colors.highlightBackground,
       "list.hoverBackground": colors.highlightBackground,
@@ -42,16 +50,19 @@ function getTheme(name, colorConfig) {
       "list.warningForeground": colors.yellow,
       "list.errorForeground": colors.orange,
       "listFilterWidget.shadow": "#00000060",
-      "list.filterMatchBackground": originColors.cyan.setAlpha(0.3).toHex8String(),
+      "list.filterMatchBackground": originColors.cyan.clone().setAlpha(0.3).toHex8String(),
       // "list.hoverForeground": colors.themePrimary,
 
       "tab.activeBackground": colors.background,
-      "tab.inactiveBackground": colors.background,
-      "tab.activeBorder": colors.themePrimary,
+      "tab.inactiveBackground": controls.highContrast ? colors.highContrastBlack : colors.background,
+      "tab.activeBorder": controls.highContrast ? colors.transparent : colors.themePrimary,
+      "tab.activeBorderTop": controls.highContrast ? colors.themePrimary : colors.transparent,
+      "tab.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
       "editorGroup.dropBackground": "#FFFFFF0F",
-      "editorGroupHeader.tabsBackground": colors.background,
+      "editorGroupHeader.tabsBackground": controls.highContrast ? colors.highContrastBlack : colors.background,
+      // "editorGroupHeader.tabsBorder": controls.highContrast ? colors.highContrastBlack : colors.transparent,
 
-      "statusBar.background": colors.background,
+      "statusBar.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "statusBar.foreground": colors.text,
       "statusBar.debuggingBackground": colors.yellow,
       "statusBar.debuggingForeground": colors.black,
@@ -68,11 +79,11 @@ function getTheme(name, colorConfig) {
       "editor.wordHighlightBackground": "#FFFFFF1F",
       "editor.lineHighlightBackground": "#FFFFFF0F",
       "editor.lineHighlightBorder": colors.transparent,
-      "editor.hoverHighlightBackground": originColors.blue.setAlpha(0.3).toHex8String(),
-      "editor.findMatchBackground": originColors.cyan.setAlpha(0.3).toHex8String(),
-      "editor.findMatchBorder": originColors.cyan.setAlpha(0.8).toHex8String(),
-      "editor.findMatchHighlightBackground": originColors.cyan.setAlpha(0.3).toHex8String(),
-      "editor.findRangeHighlightBackground": originColors.cyan.setAlpha(0.3).toHex8String(),
+      "editor.hoverHighlightBackground": originColors.blue.clone().setAlpha(0.3).toHex8String(),
+      "editor.findMatchBackground": originColors.cyan.clone().setAlpha(0.3).toHex8String(),
+      "editor.findMatchBorder": originColors.cyan.clone().setAlpha(0.8).toHex8String(),
+      "editor.findMatchHighlightBackground": originColors.cyan.clone().setAlpha(0.3).toHex8String(),
+      "editor.findRangeHighlightBackground": originColors.cyan.clone().setAlpha(0.3).toHex8String(),
 
       "terminal.ansiBrightBlack": colors.brightBlack,
       "terminal.ansiBrightBlue": colors.blue,
@@ -101,7 +112,7 @@ function getTheme(name, colorConfig) {
       "notifications.border": colors.highlightBackground,
       "notificationLink.foreground": colors.text,
 
-      "panel.background": colors.background,
+      "panel.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "panel.border": colors.themePrimary,
       "panelTitle.activeBorder": colors.themePrimary,
       "panelTitle.activeForeground": colors.themePrimary,
@@ -126,9 +137,9 @@ function getTheme(name, colorConfig) {
       "keybindingLabel.bottomBorder": colors.themePrimary,
 
       "scrollbar.shadow": colors.brightBlack,
-      "scrollbarSlider.background": originColors.black.setAlpha(0.5).toHex8String(),
-      "scrollbarSlider.hoverBackground": originColors.brightBlack.setAlpha(0.5).toHex8String(),
-      "scrollbarSlider.activeBackground": originColors.purple.setAlpha(0.3).toHex8String(),
+      "scrollbarSlider.background": originColors.black.clone().setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.hoverBackground": originColors.brightBlack.clone().setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.activeBackground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
 
       "widget.shadow": "#00000060",
       "editorWidget.background": colors.background,
@@ -144,7 +155,7 @@ function getTheme(name, colorConfig) {
       "editorSuggestWidget.selectedBackground": colors.brightBlack,
       "editorSuggestWidget.selectedForeground": colors.text,
       "editorLink.activeForeground": colors.purple,
-      "editorCodeLens.foreground": originColors.purple.setAlpha(0.3).toHex8String(),
+      "editorCodeLens.foreground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
 
       "pickerGroup.border": colors.themePrimary,
 		  "pickerGroup.foreground": colors.themePrimary,
@@ -215,18 +226,18 @@ function getTheme(name, colorConfig) {
       "textPreformat.foreground": colors.themePrimary,
 
       "merge.border": colors.transparent,
-      "merge.commonContentBackground": originColors.brightBlack.setAlpha(0.2).toHex8String(),
-      "merge.commonHeaderBackground": originColors.brightBlack.toHex8String(),
-      "merge.currentContentBackground": originColors.green.setAlpha(0.2).toHex8String(),
-      "merge.currentHeaderBackground": originColors.green.toHex8String(),
-      "merge.incomingContentBackground": originColors.blue.setAlpha(0.2).toHex8String(),
-      "merge.incomingHeaderBackground": originColors.blue.toHex8String(),
+      "merge.commonContentBackground": originColors.brightBlack.clone().setAlpha(0.2).toHex8String(),
+      "merge.commonHeaderBackground": originColors.brightBlack.clone().setAlpha(0.5).toHex8String(),
+      "merge.currentContentBackground": originColors.green.clone().setAlpha(0.2).toHex8String(),
+      "merge.currentHeaderBackground": originColors.green.clone().setAlpha(0.5).toHex8String(),
+      "merge.incomingContentBackground": originColors.blue.clone().setAlpha(0.2).toHex8String(),
+      "merge.incomingHeaderBackground": originColors.blue.clone().setAlpha(0.5).toHex8String(),
 
-      "diffEditor.insertedTextBackground": originColors.green.setAlpha(0.2).toHex8String(),
-      "diffEditor.removedTextBackground": originColors.red.setAlpha(0.2).toHex8String(),
+      "diffEditor.insertedTextBackground": originColors.green.clone().setAlpha(0.2).toHex8String(),
+      "diffEditor.removedTextBackground": originColors.red.clone().setAlpha(0.2).toHex8String(),
       "diffEditor.border": colors.highlightBackground,
-      "diffEditorOverview.insertedForeground": originColors.green.setAlpha(0.5).toHex8String(),
-      "diffEditorOverview.removedForeground": originColors.red.setAlpha(0.5).toHex8String(),
+      "diffEditorOverview.insertedForeground": originColors.green.clone().setAlpha(0.5).toHex8String(),
+      "diffEditorOverview.removedForeground": originColors.red.clone().setAlpha(0.5).toHex8String(),
 
       "settings.modifiedItemIndicator": colors.themePrimary,
 

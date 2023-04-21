@@ -1,13 +1,13 @@
 {
   "name": "hard-hacker-theme",
-  "displayName": "HardHackerTheme",
+  "displayName": "HardHacker Theme",
   "description": "",
   "publisher": "HardHacker",
   "repository": {
     "type": "git",
     "url": "https://github.com/hardhackerlabs/theme-vscode.git"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "engines": {
     "vscode": "^1.13.0"
   },
@@ -43,6 +43,11 @@
         "label": "Hard Hacker Darker",
         "uiTheme": "vs-dark",
         "path": "./themes/darker.json"
+      },
+      {
+        "label": "Hard Hacker High Contrast",
+        "uiTheme": "vs-dark",
+        "path": "./themes/high-contrast.json"
       }
     ]
   },

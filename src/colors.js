@@ -26,7 +26,7 @@ function getColors(painter) {
     transparent: "#00000000",
   
     background: colors.black,
-    highlightBackground: originColors.black.lighten(10).toHex8String(),
+    highlightBackground: originColors.black.clone().lighten(10).toHex8String(),
     text: colors.white,
     string: colors.green,
     number: colors.yellow,

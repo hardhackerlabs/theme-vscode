@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.5]
+
+- A new high contrast theme
+
 ## [0.1.4]
 
 - Fix status item hover color when debugging
