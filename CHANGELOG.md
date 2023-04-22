@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.1.7]
+
+- Increase comment color brightness to pass WCAG AA
+- Change notification center header background to black, because color of these icons in header can not be changed
+
 ## [0.1.6]
 
 - Add the missing border for status bar
@@ -24,6 +29,7 @@
 ## [0.1.0]
 
 - Better support for JavaScript and TypeScript
+
 ## [0.0.1]
 
 - Initial release

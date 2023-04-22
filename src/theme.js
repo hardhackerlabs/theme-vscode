@@ -11,6 +11,7 @@ function getTheme(name, colorConfig, controlsOpt) {
     colors: {
       "focusBorder": colors.transparent,
       "progressBar.background": colors.themePrimary,
+      // "icon.foreground": colors.secondaryText,
 
       "titleBar.activeBackground": colors.background,
       "titleBar.activeForeground": colors.text,
@@ -20,6 +21,8 @@ function getTheme(name, colorConfig, controlsOpt) {
 
       "editor.background": colors.background,
       "editor.foreground": colors.text,
+      "editorLineNumber.foreground": colors.secondaryText,
+      "editorLineNumber.activeForeground": colors.text,
       "editorInlayHint.foreground": colors.secondaryText,
       "editorInlayHint.background": "#FFFFFF0F",
 
@@ -55,8 +58,10 @@ function getTheme(name, colorConfig, controlsOpt) {
 
       "tab.activeBackground": colors.background,
       "tab.inactiveBackground": controls.highContrast ? colors.highContrastBlack : colors.background,
+      "tab.inactiveForeground": colors.secondaryText,
       "tab.activeBorder": controls.highContrast ? colors.transparent : colors.themePrimary,
       "tab.activeBorderTop": controls.highContrast ? colors.themePrimary : colors.transparent,
+      "tab.activeForeground": colors.text,
       "tab.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
       "editorGroup.dropBackground": "#FFFFFF0F",
       "editorGroupHeader.tabsBackground": controls.highContrast ? colors.highContrastBlack : colors.background,
@@ -104,14 +109,17 @@ function getTheme(name, colorConfig, controlsOpt) {
       "terminal.ansiYellow": colors.yellow,
       "terminal.findMatchBackground": colors.cyan,
 
-      "notificationCenter.border": colors.transparent,
-      "notificationCenterHeader.foreground": colors.white,
-      "notificationCenterHeader.background": colors.themePrimary,
+      "notificationCenter.border": colors.themePrimary,
+      "notificationCenterHeader.foreground": colors.text,
+      "notificationCenterHeader.background": colors.background,
       "notificationToast.border": colors.background,
       "notifications.foreground": colors.text,
       "notifications.background": colors.background,
       "notifications.border": colors.highlightBackground,
       "notificationLink.foreground": colors.text,
+      "notificationsErrorIcon.foreground": colors.orange,
+      "notificationsWarningIcon.foreground": colors.yellow,
+      "notificationsInfoIcon.foreground": colors.green,
 
       "panel.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "panel.border": colors.themePrimary,
@@ -120,11 +128,11 @@ function getTheme(name, colorConfig, controlsOpt) {
       "panelTitle.inactiveForeground": colors.text,
 
       "button.background": colors.themePrimary,
-      "button.foreground": colors.text,
+      "button.foreground": colors.black,
       "button.hoverBackground": colors.themePrimary,
-      "button.secondaryBackground": colors.brightBlack,
+      "button.secondaryBackground": colors.highlightBackground,
       "button.secondaryForeground": colors.themePrimary,
-      "button.secondaryHoverBackground": colors.brightBlack,
+      "button.secondaryHoverBackground": colors.ignoreText,
       "checkbox.background": colors.background,
       "checkbox.foreground": colors.text,
       "checkbox.border": colors.themePrimary,
@@ -136,10 +144,11 @@ function getTheme(name, colorConfig, controlsOpt) {
       "dropdown.foreground": colors.text,
 
       "keybindingLabel.bottomBorder": colors.themePrimary,
+      "keybindingLabel.foreground": colors.text,
 
-      "scrollbar.shadow": colors.brightBlack,
-      "scrollbarSlider.background": originColors.black.clone().setAlpha(0.5).toHex8String(),
-      "scrollbarSlider.hoverBackground": originColors.brightBlack.clone().setAlpha(0.5).toHex8String(),
+      "scrollbar.shadow": "#00000060",
+      "scrollbarSlider.background": originColors.black.clone().lighten(10).setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.hoverBackground": originColors.black.clone().lighten(20).setAlpha(0.5).toHex8String(),
       "scrollbarSlider.activeBackground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
 
       "widget.shadow": "#00000060",
@@ -153,10 +162,10 @@ function getTheme(name, colorConfig, controlsOpt) {
       "editorSuggestWidget.foreground": colors.text,
       "editorSuggestWidget.highlightForeground": colors.themePrimary,
       "editorSuggestWidget.focusHighlightForeground": colors.themePrimary,
-      "editorSuggestWidget.selectedBackground": colors.brightBlack,
+      "editorSuggestWidget.selectedBackground": colors.highlightBackground,
       "editorSuggestWidget.selectedForeground": colors.text,
       "editorLink.activeForeground": colors.purple,
-      "editorCodeLens.foreground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
+      "editorCodeLens.foreground": originColors.purple.clone().setAlpha(0.4).toHex8String(),
 
       "pickerGroup.border": colors.themePrimary,
 		  "pickerGroup.foreground": colors.themePrimary,
@@ -219,7 +228,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "gitDecoration.modifiedResourceForeground": colors.yellow, // Color for modified git resources.
       "gitDecoration.deletedResourceForeground": colors.red, // Color for deleted git resources.
       "gitDecoration.untrackedResourceForeground": colors.green, // Color for untracked git resources.
-      "gitDecoration.ignoredResourceForeground": colors.secondaryText, // Color for ignored git resources.
+      "gitDecoration.ignoredResourceForeground": colors.ignoreText, // Color for ignored git resources.
       "gitDecoration.conflictingResourceForeground": colors.orange, // Color for conflicting git resources.
 
       "textLink.activeForeground": colors.purple,
@@ -227,8 +236,8 @@ function getTheme(name, colorConfig, controlsOpt) {
       "textPreformat.foreground": colors.themePrimary,
 
       "merge.border": colors.transparent,
-      "merge.commonContentBackground": originColors.brightBlack.clone().setAlpha(0.2).toHex8String(),
-      "merge.commonHeaderBackground": originColors.brightBlack.clone().setAlpha(0.5).toHex8String(),
+      "merge.commonContentBackground": originColors.brightBlack.clone().setAlpha(0.1).toHex8String(),
+      "merge.commonHeaderBackground": originColors.brightBlack.clone().setAlpha(0.3).toHex8String(),
       "merge.currentContentBackground": originColors.green.clone().setAlpha(0.2).toHex8String(),
       "merge.currentHeaderBackground": originColors.green.clone().setAlpha(0.5).toHex8String(),
       "merge.incomingContentBackground": originColors.blue.clone().setAlpha(0.2).toHex8String(),
@@ -248,7 +257,11 @@ function getTheme(name, colorConfig, controlsOpt) {
       "editorBracketHighlight.foreground4": colors.text,
       "editorBracketHighlight.foreground5": colors.yellow,
       "editorBracketHighlight.foreground5": colors.red,
-      
+
+      "breadcrumb.foreground": colors.secondaryText,
+      "breadcrumb.focusForeground": colors.text,
+
+      "quickInput.foreground": colors.text,
     },
     tokenColors: [
       {
