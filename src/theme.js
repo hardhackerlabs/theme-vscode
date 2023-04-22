@@ -90,6 +90,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "statusBarItem.prominentHoverBackground": "#FFFFFF80",
       // "statusBarItem.remoteForeground": colors.black,
 
+      "terminal.foreground": colors.text,
       "terminal.ansiBrightBlack": colors.brightBlack,
       "terminal.ansiBrightBlue": colors.blue,
       "terminal.ansiBrightCyan": colors.cyan,

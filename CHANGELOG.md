@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.8]
+
+- Fix terminal foreground color
+
 ## [0.1.7]
 
 - Increase comment color brightness to pass WCAG AA
