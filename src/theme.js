@@ -337,7 +337,7 @@ function getTheme(name, colorConfig, controlsOpt) {
           "storage.control",
         ],
         settings: {
-          foreground: colors.purple,
+          foreground: colors.keyword,
         }
       },
       {
@@ -952,17 +952,21 @@ function getTheme(name, colorConfig, controlsOpt) {
         settings: {
           foreground: colors.red,
         }
-      },
-      {
-        name: "[JS, TS] - Storage.type",
+      },{
+        name: "[Rust] - lifetime",
         scope: [
-          "source.js storage.type",
-          "source.ts storage.type",
-          "source.js storage.modifier",
-          "source.ts storage.modifier",
+          "storage.modifier.lifetime.rust",
         ],
         settings: {
-          foreground: colors.keyword,
+          foreground: colors.variable,
+        }
+      },{
+        name: "[Java] - lifetime",
+        scope: [
+          "storage.type.annotation.java",
+        ],
+        settings: {
+          foreground: colors.green,
         }
       }
     ]

@@ -290,7 +290,7 @@
         "storage.control"
       ],
       "settings": {
-        "foreground": "#e192efff"
+        "foreground": "#b1baf4ff"
       }
     },
     {
@@ -907,15 +907,21 @@
       }
     },
     {
-      "name": "[JS, TS] - Storage.type",
+      "name": "[Rust] - lifetime",
       "scope": [
-        "source.js storage.type",
-        "source.ts storage.type",
-        "source.js storage.modifier",
-        "source.ts storage.modifier"
+        "storage.modifier.lifetime.rust"
       ],
       "settings": {
-        "foreground": "#b1baf4ff"
+        "foreground": "#e192efff"
+      }
+    },
+    {
+      "name": "[Java] - lifetime",
+      "scope": [
+        "storage.type.annotation.java"
+      ],
+      "settings": {
+        "foreground": "#b1f2a7ff"
       }
     }
   ]
