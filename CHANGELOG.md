@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.9]
+
+- Fix notification center background
+- Add hover background color for primary button
+- Colors for minimap, overviewruler, and editor gutter
+
 ## [0.1.8]
 
 - Fix terminal foreground color

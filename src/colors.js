@@ -27,6 +27,7 @@ function getColors(painter) {
   
     background: colors.black,
     highlightBackground: originColors.black.clone().lighten(10).toHex8String(),
+    hoverBackground: originColors.black.clone().lighten(20).setAlpha(0.2).toHex8String(),
     text: colors.white,
     string: colors.green,
     number: colors.yellow,
