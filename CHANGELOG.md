@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.0]
+
+- Add a new beta version light theme 'Hard Hacker Light'
+
 ## [0.1.9]
 
 - Fix notification center background

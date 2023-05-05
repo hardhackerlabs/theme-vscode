@@ -1,7 +1,8 @@
 const fs = require('fs').promises;
-const getColors = require('./colors');
+const { getColors, getLightColors } = require('./colors');
 const getTheme = require('./theme');
 
+// dark themes
 console.log('Generating theme: normal');
 const normalTheme = getTheme('Hard Hacker', getColors((color, name) => {
   return color;
@@ -32,3 +33,23 @@ highContrastColors.colors.highContrastBlack = highContrastColors.originColors.bl
 const highContrastTheme = getTheme('Hard Hacker High Contrast', highContrastColors, { highContrast: true });
 
 fs.writeFile('./themes/high-contrast.json', JSON.stringify(highContrastTheme, null, 2)).catch(() => process.exit(1));
+
+// light themes
+console.log('Generating theme: light');
+const lightTheme = getTheme('Hard Hacker Light', getLightColors((color, name) => {
+  // switch (name) {
+  //   case 'red':
+  //   case 'green':
+  //   case 'blue':
+  //   case 'cyan':
+  //   case 'purple':
+  //   case 'yellow':
+  //   case 'orange':
+  //     color.brighten(-18);
+  //     break;
+  //   default:
+  // }
+  return color;
+}));
+
+fs.writeFile('./themes/light.json', JSON.stringify(lightTheme, null, 2)).catch(() => process.exit(1));

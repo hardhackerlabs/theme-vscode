@@ -1,9 +1,9 @@
 const tinycolor = require("tinycolor2");
 
-function getTheme(name, colorConfig, controlsOpt) {
+function getTheme(name, colorConfig, controlsOpt = {}) {
   const controls = Object.assign({
     highContrast: false,
-  }, controlsOpt || {});
+  }, controlsOpt);
 
   const { originColors, colors } = colorConfig;
 
@@ -37,8 +37,8 @@ function getTheme(name, colorConfig, controlsOpt) {
       "editorInlayHint.foreground": colors.secondaryText,
       "editorInlayHint.background": colors.hoverBackground,
 
-      "editorGutter.addedBackground": tinycolor.mix(originColors.black, originColors.green, 60).toHex8String(),
-      "editorGutter.modifiedBackground": tinycolor.mix(originColors.black, originColors.blue.clone().saturate(100), 60).toHex8String(),
+      "editorGutter.addedBackground": tinycolor.mix(originColors.background, originColors.green, 60).toHex8String(),
+      "editorGutter.modifiedBackground": tinycolor.mix(originColors.background, originColors.blue.clone().saturate(100), 60).toHex8String(),
 
       "minimap.selectionHighlight": colors.highlightBackground,
       "minimap.findMatchHighlight": colors.cyan,
@@ -50,7 +50,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "editorOverviewRuler.modifiedForeground": originColors.blue.clone().saturate(100).setAlpha(0.6).toHex8String(),
 
       "activityBarBadge.background": colors.themePrimary,
-      "activityBarBadge.foreground": colors.black,
+      "activityBarBadge.foreground": colors.reverseText,
       "activityBar.background": colors.background,
       "activityBar.foreground": colors.themePrimary,
       "activityBar.activeBorder": colors.themePrimary,
@@ -61,7 +61,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "sideBar.background": controls.highContrast ? colors.highContrastBlack : colors.background,
       "sideBar.foreground": colors.text,
       "sideBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
-      "sideBarSectionHeader.background": controls.highContrast ? colors.black : colors.transparent,
+      "sideBarSectionHeader.background": controls.highContrast ? colors.background : colors.transparent,
       "sideBarSectionHeader.border": controls.highContrast? colors.highlightBackground : colors.transparent,
       // "list.activeSelectionForeground": colors.themePrimary,
       "list.activeSelectionBackground": colors.highlightBackground,
@@ -94,15 +94,14 @@ function getTheme(name, colorConfig, controlsOpt) {
       "statusBar.foreground": colors.text,
       "statusBar.border": controls.highContrast ? colors.highlightBackground : colors.transparent,
       "statusBar.debuggingBackground": colors.yellow,
-      "statusBar.debuggingForeground": colors.black,
-      "statusBar.noFolderBackground": colors.black,
-      "statusBar.noFolderForeground": colors.white,
+      "statusBar.debuggingForeground": colors.reverseText,
+      "statusBar.noFolderBackground": colors.background,
+      "statusBar.noFolderForeground": colors.text,
       "statusBarItem.remoteBackground": colors.themePrimary,
       "statusBarItem.activeBackground": colors.highlightBackground,
       "statusBarItem.hoverBackground": "#FFFFFF2F",
-      "statusBarItem.prominentBackground": colors.black,
+      "statusBarItem.prominentBackground": colors.background,
       "statusBarItem.prominentHoverBackground": "#FFFFFF2F",
-      // "statusBarItem.remoteForeground": colors.black,
 
       "terminal.foreground": colors.text,
       "terminal.ansiBrightBlack": colors.brightBlack,
@@ -142,7 +141,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "panelTitle.inactiveForeground": colors.text,
 
       "button.background": colors.themePrimary,
-      "button.foreground": colors.black,
+      "button.foreground": colors.reverseText,
       "button.hoverBackground": originColors.red.clone().lighten(5).toHex8String(),
       "button.secondaryBackground": colors.highlightBackground,
       "button.secondaryForeground": colors.themePrimary,
@@ -161,8 +160,8 @@ function getTheme(name, colorConfig, controlsOpt) {
       "keybindingLabel.foreground": colors.text,
 
       "scrollbar.shadow": "#00000060",
-      "scrollbarSlider.background": originColors.black.clone().lighten(10).setAlpha(0.5).toHex8String(),
-      "scrollbarSlider.hoverBackground": originColors.black.clone().lighten(20).setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.background": originColors.highlightBackground.clone().setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.hoverBackground": originColors.hoverBackground.clone().setAlpha(0.5).toHex8String(),
       "scrollbarSlider.activeBackground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
 
       "widget.shadow": "#00000060",
@@ -197,7 +196,7 @@ function getTheme(name, colorConfig, controlsOpt) {
       "inputValidation.warningBorder": colors.purple,
       "inputOption.activeBorder": colors.transparent,
       "inputOption.activeBackground": colors.themePrimary,
-      "inputOption.activeForeground": colors.black,
+      "inputOption.activeForeground": colors.reverseText,
 
       "peekView.border": colors.themePrimary,
       "peekViewEditor.background": colors.background,
