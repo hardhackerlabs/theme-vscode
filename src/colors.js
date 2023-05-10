@@ -53,12 +53,12 @@ function getLightColors(painter) {
   let originColors = _.mapValues({
     black: tinycolor("#282433"),
     brightBlack: tinycolor("#756F8C"),
-    red: tinycolor("#C24481"),
+    red: tinycolor("#B33974"),
     green: tinycolor("#3C8032"),
     yellow: tinycolor("#A86200"),
-    blue: tinycolor("#6370BF"),
-    purple: tinycolor("#9A2FAD"),
-    cyan: tinycolor("#2D8096"),
+    blue: tinycolor("#5663B8"),
+    purple: tinycolor("#832294"),
+    cyan: tinycolor("#23758C"),
     orange: tinycolor("#C44949"), 
     white: tinycolor("#FBFAFC"),
   }, painter);
