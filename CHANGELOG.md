@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.2.1]
+
+- Reduce the brightness of red, blue, purple, and cyan in the light version for better readability
+- Add a high contrast version of the light theme
+
 ## [0.2.0]
 
 - Add a new beta version light theme 'Hard Hacker Light'
