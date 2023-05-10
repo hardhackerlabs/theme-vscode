@@ -68,6 +68,7 @@
     "tab.border": "#00000000",
     "editorGroup.dropBackground": "#c8bad633",
     "editorGroupHeader.tabsBackground": "#fbfafcff",
+    "editorGroupHeader.tabsBorder": "#00000000",
     "statusBar.background": "#fbfafcff",
     "statusBar.foreground": "#282433ff",
     "statusBar.border": "#00000000",

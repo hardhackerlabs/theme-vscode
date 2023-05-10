@@ -53,6 +53,11 @@
         "label": "Hard Hacker Light",
         "uiTheme": "vs",
         "path": "./themes/light.json"
+      },
+      {
+        "label": "Hard Hacker Light High Contrast",
+        "uiTheme": "vs",
+        "path": "./themes/light-high-contrast.json"
       }
     ]
   },
