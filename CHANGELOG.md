@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.2]
+
+- Support MDX syntax highlighting
+
 ## [0.2.1]
 
 - Reduce the brightness of red, blue, purple, and cyan in the light version for better readability

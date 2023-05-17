@@ -740,7 +740,8 @@ function getTheme(name, colorConfig, controlsOpt = {}) {
         scope: [
           "markdown.heading",
           "markup.heading | markup.heading entity.name",
-          "markup.heading.markdown punctuation.definition.heading.markdown"
+          "markup.heading.markdown punctuation.definition.heading.markdown",
+          "punctuation.definition.heading.mdx"
         ],
         settings: {
           foreground: colors.themePrimary,
@@ -896,14 +897,20 @@ function getTheme(name, colorConfig, controlsOpt = {}) {
       },
       {
         "name": "[MARKDOWN] - Color for Text inside inline code block `code`",
-        "scope": "markup.inline.raw.string.markdown",
+        "scope": [
+          "markup.inline.raw.string.markdown",
+          "markup.raw.code.text.mdx"
+        ],
         "settings": {
           "foreground": colors.green,
         }
       },
       {
         "name": "[MARKDOWN] - Color for Quote Punctuation",
-        "scope": "punctuation.definition.quote.begin.markdown",
+        "scope": [
+          "punctuation.definition.quote.begin.markdown",
+          "punctuation.definition.quote.begin.mdx"
+        ],
         "settings": {
           "foreground": colors.yellow,
         }
@@ -913,6 +920,7 @@ function getTheme(name, colorConfig, controlsOpt = {}) {
         "scope": [
           "beginning.punctuation.definition.list.markdown",
           "punctuation.definition.list.begin.markdown",
+          "variable.unordered.list.mdx",
         ],
         "settings": {
           "foreground": colors.themePrimary,
@@ -930,6 +938,17 @@ function getTheme(name, colorConfig, controlsOpt = {}) {
         "scope": "punctuation.definition.markdown",
         "settings": {
           "foreground": colors.green,
+        }
+      },
+      {
+        "name": "[MDX] - Emoji",
+        "scope": [
+          "string.emoji.mdx punctuation.definition.gemoji.begin.mdx",
+          "string.emoji.mdx punctuation.definition.gemoji.end.mdx",
+          "string.emoji.mdx keyword.control.gemoji.mdx"
+        ],
+        "settings": {
+          "foreground": colors.blue,
         }
       },
       {
