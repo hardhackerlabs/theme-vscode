@@ -160,8 +160,8 @@ function getTheme(name, colorConfig, controlsOpt = {}) {
       "keybindingLabel.foreground": colors.text,
 
       "scrollbar.shadow": "#00000060",
-      "scrollbarSlider.background": originColors.highlightBackground.clone().setAlpha(0.5).toHex8String(),
-      "scrollbarSlider.hoverBackground": originColors.hoverBackground.clone().setAlpha(0.5).toHex8String(),
+      "scrollbarSlider.background": originColors.purple.clone().setAlpha(0.1).toHex8String(),
+      "scrollbarSlider.hoverBackground": originColors.purple.clone().setAlpha(0.2).toHex8String(),
       "scrollbarSlider.activeBackground": originColors.purple.clone().setAlpha(0.3).toHex8String(),
 
       "widget.shadow": "#00000060",

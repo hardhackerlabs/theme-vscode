@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.3]
+
+- A more easily visible scrollbar
+
 ## [0.2.2]
 
 - Support MDX syntax highlighting
